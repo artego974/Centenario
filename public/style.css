@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #graficoContainer {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 80%;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 450px !important;
+  }

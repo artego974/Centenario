@@ -15,13 +15,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "http://127.0.0.1:3000",
-      "http://127.0.0.1:5500"
-    ],
-  })
+  cors(
+//    origin: [
+//       "http://localhost:3000",
+//       "http://127.0.0.1:3000",
+//       "http://127.0.0.1:5500"
+//     ], 
+  )
 );
 
 app.get("/", (req: Request, res: Response) => {

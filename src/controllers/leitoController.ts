@@ -16,11 +16,11 @@ export class LeitoController {
         relations: ["setor", "patologia"]
       });
 
-       res.json(leitos);
-       return
+      res.json(leitos);
+      return
     } catch (err) {
-       res.status(500).json({ error: "Erro ao listar leitos" });
-       return
+      console.error(err);
+      res.status(500).json({ error: err });
     }
   }
 
@@ -31,19 +31,21 @@ export class LeitoController {
       const { status } = req.body;
 
       const leito = await this.leitoRepo.findOne({ where: { id: Number(id) } });
-      if (!leito){
+      if (!leito) {
         res.status(404).json({ error: "Leito não encontrado" });
         return
-      } 
+      }
 
       leito.status = status;
+      leito.date = new Date(); // salva data atual da mudança
       await this.leitoRepo.save(leito);
 
-       res.json({ message: "Status atualizado", leito });
-       return
+
+      res.json({ message: "Status atualizado", leito });
+      return
     } catch (err) {
-       res.status(500).json({ error: "Erro ao atualizar status" });
-       return
+      res.status(500).json({ error: "Erro ao atualizar status" });
+      return
     }
   }
 
