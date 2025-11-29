@@ -11,8 +11,12 @@ export class PessoaEspera {
   @Column({ type: "int", nullable: false })
   quantidade: number; 
 
-  constructor(cor: string, quantidade: number) {
+  @Column({ type: "datetime", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP" })
+  date: Date;
+
+  constructor(cor: string, quantidade: number, data:Date) {
     this.cor = cor;
     this.quantidade = quantidade;
+    this.date = data;
   }
 }

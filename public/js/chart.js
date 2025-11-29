@@ -87,8 +87,13 @@ async function carregarLeitosGraficos() {
 }
 
 carregarLeitosGraficos();
+carregarUltimaAtualizacao();
 // se quiser atualizar de X em X tempo:
-setInterval(carregarLeitosGraficos, 10000);
+setInterval(() => {
+  carregarLeitosGraficos();
+  carregarUltimaAtualizacao();
+}, 10000);
+
 
 function criarGrafico(id, ocupados, total) {
 
@@ -131,5 +136,28 @@ function criarGrafico(id, ocupados, total) {
   });
 }
     
+async function carregarUltimaAtualizacao() {
+  try {
+    const res = await fetch("http://localhost:3000/leito/ultima");
+    const json = await res.json();
+
+    if (!json.ultimaAtualizacao) return;
+
+    const data = new Date(json.ultimaAtualizacao);
+
+    const formatado = data.toLocaleString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+    document.getElementById("ultima-atualizacao").innerText = formatado;
+
+  } catch (err) {
+    console.error("Erro ao carregar última atualização:", err);
+  }
+}
 
 

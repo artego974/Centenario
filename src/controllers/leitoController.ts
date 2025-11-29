@@ -77,4 +77,20 @@ export class LeitoController {
       return res.status(500).json({ error: "Erro ao atualizar patologia" });
     }
   }
+
+  async ultimaAtualizacao(req: Request, res: Response) {
+    try {
+      const resultado = await this.leitoRepo
+        .createQueryBuilder("leito")
+        .select("MAX(leito.date)", "ultima")
+        .getRawOne();
+
+      return res.json({
+        ultimaAtualizacao: resultado.ultima
+      });
+
+    } catch (err) {
+      return res.status(500).json({ error: "Erro ao buscar última atualização" });
+    }
+  }
 }

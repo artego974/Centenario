@@ -6,9 +6,13 @@ import esperaRoutes from "./routes/esperaRoutes"
 import leitoRoutes from "./routes/leitoRoutes"
 import cors from "cors";
 import path from 'path';
+import { LeitoController } from './controllers/leitoController';
+import { PessoaEsperaController } from './controllers/esperaController';
 
 
 const app: Application = express();
+const leitoController = new LeitoController();
+const esperaController = new PessoaEsperaController();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,12 +35,16 @@ app.get("/", (req: Request, res: Response) => {
 
 AppDataSource.initialize()
   .then(() => {
- 
+    
     app.use(UsuarioRoutes);
     app.use(SetorRoutes);
     app.use(esperaRoutes)
     app.use(leitoRoutes)
     app.use("/leito", leitoRoutes);
+    app.get("/leito/ultima", (req, res) => leitoController.ultimaAtualizacao(req, res));
+    app.get("/espera/ultima", (req, res) => esperaController.ultimaAtualizacao(req, res));
+
+
 
     app.listen(3000, () => console.log('Server rodando na porta 3000'));
   })

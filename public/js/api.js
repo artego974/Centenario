@@ -43,6 +43,32 @@ async function carregarTriagem() {
 }
 
 carregarTriagem();
-setInterval(carregarTriagem, 5000); // atualiza a cada 5 segundos
+carregarUltimaAtualizacaoTriagem();
+
+setInterval(() => {
+  carregarTriagem();
+  carregarUltimaAtualizacaoTriagem();
+}, 5000);
 
 
+async function carregarUltimaAtualizacaoTriagem() {
+  try {
+    const response = await fetch("http://localhost:3000/espera/ultima");
+    const json = await response.json();
+
+    if (!json.ultimaAtualizacao) return;
+
+    const data = new Date(json.ultimaAtualizacao);
+
+    const horaFormatada = data.toLocaleTimeString("pt-BR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
+
+    document.getElementById("ultima-atualizacao-triagem").innerText = horaFormatada;
+
+  } catch (err) {
+    console.error("Erro ao carregar última atualização da triagem:", err);
+  }
+}
