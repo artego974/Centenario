@@ -1,0 +1,272 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #222;
+}
+
+/* =========================================
+   TÍTULO PRINCIPAL
+   ========================================= */
+.header {
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.header h2 {
+    color: #888;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.header h1 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* =========================================
+   TABS (HISTÓRIA / SERVIÇOS)
+   ========================================= */
+.tabs {
+    text-align: center;
+    margin: 30px 0;
+    padding: 0 15px;
+}
+
+.tabs a {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 6px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #0094FF;
+    color: #0094FF;
+    transition: 0.3s;
+}
+
+.tabs a.ativo,
+.tabs a:hover {
+    background: #0094FF;
+    color: #fff;
+}
+
+/* =========================================
+   IMAGEM PRINCIPAL + FRASE
+   ========================================= */
+.intro-img {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.intro-img img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+}
+
+.intro-img p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================================
+   NÚMEROS
+   ========================================= */
+.numeros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 50px;
+    padding: 0 20px;
+}
+
+.numeros p {
+    background: #004aad;
+    color: #fff;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* =========================================
+   HISTÓRIA
+   ========================================= */
+#historia {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+#historia h2 {
+    font-size: 26px;
+    border-left: 5px solid #0094FF;
+    padding-left: 10px;
+}
+
+#historia p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+}
+
+#historia img {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+#historia .legenda {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+/* =========================================
+   SERVIÇOS
+   ========================================= */
+#servicos {
+    margin-top: 60px;
+    padding: 40px 0;
+    background: #fff;
+}
+
+#servicos h2 {
+    text-align: center;
+    color: #888;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+#servicos h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 0;
+    color: #111;
+}
+
+/* ====== CARDS ====== */
+.cards {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 16px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #222;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0094FF;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* =======================================================
+   RESPONSIVIDADE (CELULAR E TABLET)
+   ======================================================= */
+
+/* TELAS MENORES QUE 768px (CELULAR GRANDE / TABLET PEQUENO) */
+@media (max-width: 768px) {
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .tabs a {
+        width: 100%;
+        max-width: 280px;
+        display: block;
+        margin: 10px auto;
+    }
+
+    #historia p {
+        font-size: 16px;
+    }
+
+    #servicos h1 {
+        font-size: 28px;
+    }
+
+    .numeros p {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 15px;
+    }
+}
+
+/* TELAS MENORES QUE 480px (CELULAR PEQUENO) */
+@media (max-width: 480px) {
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header h2 {
+        font-size: 16px;
+    }
+
+    .intro-img p {
+        font-size: 13px;
+    }
+
+    #historia h2 {
+        font-size: 22px;
+    }
+
+    #servicos h1 {
+        font-size: 24px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .numeros {
+        gap: 8px;
+    }
+
+    .numeros p {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
