@@ -1,0 +1,134 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #000;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* SEÇÃO FALE CONOSCO */
+.container {
+    max-width: 1250px;
+    margin: 120px auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.left-content h1 {
+    color: #278FAA;
+    font-size: 32px;
+}
+
+.left-content p {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.btn {
+    margin-top: 20px;
+    background: #278FAA;
+    border: none;
+    padding: 12px 28px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.container .right-content {
+    width: 30%;
+}
+
+.container .right-content h3 {
+    color: #278FAA;
+    margin-bottom: 5px;
+}
+
+/* FORMULÁRIO */
+.form-area {
+    max-width: 1200px;
+    margin: 40px auto 80px auto;
+    padding: 0 40px;
+}
+
+.form-area h2 {
+    color: #278FAA;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+form label {
+    margin-top: 22px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.container .left-content {
+    width: 50%;
+    margin-left: 24px;
+    text-align: justify;
+}
+
+.container .left-content button {
+    width: 60%;
+}
+
+section .social-icons {
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-between;
+}
+
+section .social-icons i {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+section .right-content h3 {
+    font-size: 15px;
+    color: #000;
+}
+
+section .right-content p {
+    font-size: 13px;
+}
+
+
+input, select, textarea {
+    margin-top: 6px;
+    padding: 10px 6px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+.enviar {
+    margin-top: 30px;
+    background: #278FAA;
+    padding: 13px;
+    width: 22%;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
