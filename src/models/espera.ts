@@ -8,7 +8,7 @@ export class PessoaEspera {
   @Column({ type: "varchar", length: 50, nullable: false })
   cor: string;
 
-  @Column({ type: "number", length: 50, nullable: false })
+  @Column({ type: "int", nullable: false })
   quantidade: number; 
 
   constructor(cor: string, quantidade: number) {

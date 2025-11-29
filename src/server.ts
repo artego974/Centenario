@@ -2,6 +2,8 @@ import express, { Application, Request, Response } from 'express';
 import { AppDataSource } from './config/data-source';
 import UsuarioRoutes from "./routes/usuarioRoutes"
 import SetorRoutes from "./routes/setorRoutes"
+import esperaRoutes from "./routes/esperaRoutes"
+import leitoRoutes from "./routes/leitoRoutes"
 import cors from "cors";
 import path from 'path';
 
@@ -31,6 +33,8 @@ AppDataSource.initialize()
  
     app.use(UsuarioRoutes);
     app.use(SetorRoutes);
+    app.use(esperaRoutes)
+    app.use(leitoRoutes)
 
 
     app.listen(3000, () => console.log('Server rodando na porta 3000'));

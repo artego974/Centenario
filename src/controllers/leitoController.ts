@@ -5,92 +5,67 @@ import { Setor } from "../models/setor";
 import { Patologia } from "../models/patologia";
 
 export class LeitoController {
-  private repo = AppDataSource.getRepository(Leito);
+  private leitoRepo = AppDataSource.getRepository(Leito);
   private setorRepo = AppDataSource.getRepository(Setor);
   private patologiaRepo = AppDataSource.getRepository(Patologia);
 
-  criar = async (req: Request, res: Response) => {
+
+  async list(req: Request, res: Response) {
     try {
-      const { status, setorId, patologiaId } = req.body;
-
-      const setor = await this.setorRepo.findOne({ where: { id: setorId } });
-      const patologia = await this.patologiaRepo.findOne({ where: { id: patologiaId } });
-
-      if (!setor){
-        res.status(404).json({ erro: "Setor não encontrado" });
-        return
-      }  
-
-      const leito = this.repo.create({
-        status,
-        setor,
-        patologia: patologia || null
+      const leitos = await this.leitoRepo.find({
+        relations: ["setor", "patologia"]
       });
 
-      await this.repo.save(leito);
-      res.status(201).json(leito);
+      return res.json(leitos);
     } catch (err) {
-      res.status(400).json({ erro: "Erro ao cadastrar leito", detalhes: err });
+      return res.status(500).json({ error: "Erro ao listar leitos" });
     }
-  };
+  }
 
-  listar = async (req: Request, res: Response) => {
-    const leitos = await this.repo.find({
-      relations: ["setor", "patologia"]
-    });
-    res.json(leitos);
-  };
+  // Atualizar status (ocupado / livre)
+  async atualizarStatus(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const { status } = req.body;
 
-  buscarPorId = async (req: Request, res: Response) => {
-    const leito = await this.repo.findOne({
-      where: { id: Number(req.params.id) },
-      relations: ["setor", "patologia"]
-    });
+      const leito = await this.leitoRepo.findOne({ where: { id: Number(id) } });
+      if (!leito) return res.status(404).json({ error: "Leito não encontrado" });
 
-    if (!leito){
-        res.status(404).json({ erro: "Leito não encontrado" });
-        return
-    } 
-    res.json(leito);
-  };
+      leito.status = status;
+      await this.leitoRepo.save(leito);
 
-  atualizar = async (req: Request, res: Response) => {
-    const { status, setorId, patologiaId } = req.body;
-
-    const leito = await this.repo.findOne({
-      where: { id: Number(req.params.id) },
-      relations: ["setor", "patologia"]
-    });
-
-    if (!leito){
-        res.status(404).json({ erro: "Leito não encontrado" });
-        return
-    }  
-
-    if (status){
-        leito.status = status;
-    } 
-
-    if (setorId) {
-      const setor = await this.setorRepo.findOne({ where: { id: setorId } });
-      if (!setor){
-        res.status(404).json({ erro: "Setor não encontrado" });
-        return
-      }  
-      leito.setor = setor;
+      return res.json({ message: "Status atualizado", leito });
+    } catch (err) {
+      return res.status(500).json({ error: "Erro ao atualizar status" });
     }
+  }
 
-    if (patologiaId !== undefined) {
-      const patologia = await this.patologiaRepo.findOne({ where: { id: patologiaId } });
-      leito.patologia = patologia || null;
+  // Atualizar patologia (ou remover)
+  async atualizarPatologia(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const { patologiaId } = req.body;
+
+      const leito = await this.leitoRepo.findOne({ where: { id: Number(id) } });
+      if (!leito) return res.status(404).json({ error: "Leito não encontrado" });
+
+      if (patologiaId) {
+        const patologia = await this.patologiaRepo.findOne({
+          where: { id: patologiaId }
+        });
+        if (!patologia)
+          return res.status(404).json({ error: "Patologia não encontrada" });
+
+        leito.patologia = patologia;
+      } else {
+        leito.patologia = null; // remove patologia
+      }
+
+      await this.leitoRepo.save(leito);
+
+      return res.json({ message: "Patologia atualizada", leito });
+    } catch (err) {
+      return res.status(500).json({ error: "Erro ao atualizar patologia" });
     }
-
-    await this.repo.save(leito);
-    res.json(leito);
-  };
-
-  deletar = async (req: Request, res: Response) => {
-    await this.repo.delete(req.params.id);
-    res.json({ mensagem: "Leito removido" });
-  };
+  }
 }

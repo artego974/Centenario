@@ -15,8 +15,8 @@ export class Usuario {
   @Column({ type: "varchar", length: 255, nullable: false })
   senha: string;
 
-  @Column({ type: "number", length: 255, nullable: false })
-  cpf: number;
+  @Column({ type: "varchar",length: 11,  nullable: false })
+  cpf: string;
 
   @Column({ type: "varchar", length: 255, nullable: false })
   registroConselho: string;
@@ -26,7 +26,7 @@ export class Usuario {
 
   private originalPassword: string;
 
-  constructor(nome: string, email: string, senha: string, cpf: number, registroConselho:string, cargo:string) {
+  constructor(nome: string, email: string, senha: string, cpf: string, registroConselho:string, cargo:string) {
     this.nome = nome;
     this.email = email;
     this.senha = senha;

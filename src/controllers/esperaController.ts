@@ -18,8 +18,7 @@ export class PessoaEsperaController {
          res.status(404).json({ message: "Registro não encontrado." });
          return
       }
-
-      pessoa.cor = cor ?? pessoa.cor;
+      
       pessoa.quantidade = quantidade ?? pessoa.quantidade;
 
       await this.pessoaRepository.save(pessoa);
