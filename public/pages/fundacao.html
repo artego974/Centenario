@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escalas Médicas</title>
-    <link rel="stylesheet" href="../css/escalasStyle.css">
+    <title>Fundação - Centenário</title>
+    <link rel="stylesheet" href="../css/fundacao.css">
     <link rel="stylesheet" href="../css/headerNavFooter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -42,43 +43,88 @@
         </ul>
     </nav>
 
-    <section class="container">
+    <!-- TÍTULO PRINCIPAL -->
+    <div class="header">
+        <h2>QUEM SOMOS</h2>
+        <h1>Uma história de excelência</h1>
+    </div>
 
-        <h1>Escalas Médicas</h1>
-        <div class="line"></div>
-    
-        <p class="descricao">
-            Nesta seção você encontra os arquivos PDF com as escalas médicas mensais de cada 
-            especialidade. Assim, é possível consultar quais profissionais estarão disponíveis 
-            para atendimento.
-        </p>
-    
-        <div class="grid">
-    
-            <!-- COLUNA 1 -->
-            <div class="item"><span class="circle"></span><div class="box">ANESTESISTAS</div></div>
-            <div class="item"><span class="circle"></span><div class="box">CIRURGIÃO GERAL</div></div>
-            <div class="item"><span class="circle"></span><div class="box">CLÍNICO GERAL ASSISTENTE</div></div>
-            <div class="item"><span class="circle"></span><div class="box">NEUROCIRURGIÕES</div></div>
-            <div class="item"><span class="circle"></span><div class="box">ONCOLOGIA</div></div>
-            <div class="item"><span class="circle"></span><div class="box small">PRONTO SOCORRO PEDIÁTRICO</div></div>
-            <div class="item"><span class="circle"></span><div class="box">PSIQUIATRIA</div></div>
-    
-            <!-- COLUNA 2 -->
-            <div class="item"><span class="circle"></span><div class="box">CENTRO OBSTÉTRICO</div></div>
-            <div class="item"><span class="circle"></span><div class="box">CENTRO CIRÚRGICO</div></div>
-            <div class="item"><span class="circle"></span><div class="box">MATERNIDADE</div></div>
-            <div class="item"><span class="circle"></span><div class="box">NEUROLOGIA</div></div>
-            <div class="item"><span class="circle"></span><div class="box">POLI ADULTO</div></div>
-            <div class="item"><span class="circle"></span><div class="box">PRONTO SOCORRO</div></div>
-            <div class="item"><span class="circle"></span><div class="box">ROTINEIROS CLÍNICAS</div></div>
-    
-        </div>
-    
+    <!-- BOTÕES HISTÓRIA / SERVIÇOS -->
+    <div class="tabs">
+        <a href="#historia" class="tab ativo">História</a>
+        <a href="#servicos" class="tab">Serviços</a>
+    </div>
+
+    <!-- PRIMEIRA IMAGEM + FRASE -->
+    <div class="intro-img">
+        <img src="../img/historia.png" alt="Hospital Centenário">
+        <p>A Fundação Hospital Centenário é um hospital geral municipal, 100% SUS, localizado em São Leopoldo – RS.</p>
+    </div>
+
+    <!-- NÚMEROS -->
+    <div class="numeros">
+        <p><strong>335 leitos</strong></p>
+        <p><strong>95.171 atendimentos</strong></p>
+        <p><strong>105.781 exames</strong></p>
+        <p><strong>84 mil procedimentos</strong></p>
+    </div>
+
+    <!-- HISTÓRIA -->
+    <section id="historia">
+        <h2>História</h2>
+
+        <p>O Hospital Centenário foi consolidado no início da década de 1940. Na ocasião, São Leopoldo já possuía um hospital mantido pela Sociedade Alemã de Beneficência, mas que se tornou insuficiente para atender ao crescimento populacional e às novas demandas sociais.</p>
+
+        <p>Em função da Revolução de 1930, os bens da sociedade foram estatizados pelo Governo do Estado. A Prefeitura Municipal assumiu o hospital, criando condições para sua ampliação e modernização.</p>
+
+        <p>Durante as décadas seguintes, o hospital passou por diversas reformas, ampliações e melhorias estruturais. Tornou-se referência para São Leopoldo e região, atendendo exclusivamente pelo Sistema Único de Saúde.</p>
+
+        <p>Hoje, a Fundação Hospital Centenário segue com compromisso de oferecer atendimento humanizado, tecnológico e qualificado para toda comunidade leopoldense.</p>
+
+        <img src="../img/servico.png" alt="Entrada da Emergência">
+        <p class="legenda">A Emergência do Hospital Centenário é uma das mais movimentadas da região.</p>
     </section>
 
-     <!-- FOOTER -->
-     <footer class="footer">
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+        <h2>NOSSOS SERVIÇOS</h2>
+        <h1>O que nós oferecemos a você!</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Análises laboratoriais</h3>
+                <a href="#">Saiba mais</a>
+            </div>
+
+            <div class="card">
+                <h3>Suplementação alimentar</h3>
+                <a href="#">Saiba mais</a>
+            </div>
+
+            <div class="card">
+                <h3>Suporte a pacientes</h3>
+                <a href="#">Saiba mais</a>
+            </div>
+
+            <div class="card">
+                <h3>Controle orçamentário</h3>
+                <a href="#">Saiba mais</a>
+            </div>
+
+            <div class="card">
+                <h3>Educação sanitária</h3>
+                <a href="#">Saiba mais</a>
+            </div>
+
+            <div class="card">
+                <h3>Elaboração de relatórios</h3>
+                <a href="#">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="footer-container">
 
             <!-- COLUNA 1 -->

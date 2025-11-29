@@ -87,6 +87,7 @@ form label {
 }
 
 section .social-icons {
+    display: flex;
     flex-direction: row;
     width: 30%;
     justify-content: space-between;

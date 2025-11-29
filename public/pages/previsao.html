@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocupação de Leitos - Histórico e Previsão</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Gemini IA (Google Generative AI) -->
+  <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai/dist/browser.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    #graficoContainer {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 900px;
+    }
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 24px;
+      color: #333;
+      text-align: left;
+    }
+
+    #statusIa {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    canvas {
+      display: block;
+      width: 100% !important;
+      height: 450px !important;
+    }
+
+    .btnVoltar {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #0078D7;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      height: min-content;
+      position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+  </style>
+</head>
+<body>
+    <a href="index.html" class="btnVoltar"><i style="margin-right: 5px;" class="fa-solid fa-arrow-left"></i>Voltar</a>
+
+  <div id="graficoContainer">
+    <h2>Ocupação de Leitos - Histórico e Previsão</h2>
+    <div id="statusIa">Carregando dados...</div>
+    <canvas id="grafico"></canvas>
+  </div>
+
+  <script>
+    // -------------------------------------
+    // 🔑 CONFIG GEMINI (IA)
+    // -------------------------------------
+    // 👉 TROCA ESSA STRING PELA TUA API KEY REAL
+    const apiKey = "SUA_API_KEY_AQUI";
+
+    let genAI = null;
+    if (window.GoogleGenerativeAI && apiKey && apiKey !== "SUA_API_KEY_AQUI") {
+      genAI = new GoogleGenerativeAI.GoogleGenerativeAI(apiKey);
+    }
+
+    const statusIaEl = document.getElementById("statusIa");
+
+    // -------------------------------------
+    // 📊 CONTROLE DO GRÁFICO
+    // -------------------------------------
+    let grafico = null;
+
+    function criarGrafico(labels, dadosHistorico, dadosPrevSimples, dadosPrevIA) {
+      const canvas = document.getElementById("grafico");
+
+      if (grafico) grafico.destroy();
+
+      const datasets = [
+        {
+          label: "Histórico de Ocupação",
+          data: dadosHistorico,
+          borderColor: "rgba(0, 120, 215, 1)",
+          backgroundColor: "rgba(0, 120, 215, 0.2)",
+          borderWidth: 3,
+          tension: 0.3,
+          pointRadius: 4
+        },
+        {
+          label: "Previsão Simples",
+          data: dadosPrevSimples,
+          borderColor: "rgba(0, 200, 80, 1)",
+          backgroundColor: "rgba(0, 200, 80, 0.15)",
+          borderWidth: 2,
+          borderDash: [6, 4],
+          tension: 0.3,
+          pointRadius: 3
+        }
+      ];
+
+      // Só adiciona dataset da IA se existir
+      if (dadosPrevIA) {
+        datasets.push({
+          label: "Previsão IA (Gemini)",
+          data: dadosPrevIA,
+          borderColor: "rgba(200, 0, 80, 1)",
+          backgroundColor: "rgba(200, 0, 80, 0.15)",
+          borderWidth: 2,
+          tension: 0.3,
+          pointRadius: 3
+        });
+      }
+
+      grafico = new Chart(canvas, {
+        type: "line",
+        data: {
+          labels,
+          datasets
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: false
+            }
+          }
+        }
+      });
+    }
+
+    // -------------------------------------
+    // 1️⃣ PEGAR DADOS DO LOCALSTORAGE (OU FICTÍCIOS)
+    // -------------------------------------
+    function obterDadosHistoricos() {
+      let labels = JSON.parse(localStorage.getItem("ocupadosDatas"));
+      let valores = JSON.parse(localStorage.getItem("ocupadosValores"));
+
+      // Se não tiver nada salvo, usa dados fictícios
+      if (!Array.isArray(labels) || !Array.isArray(valores) || labels.length === 0 || valores.length === 0) {
+        labels = ["Dia -6", "Dia -5", "Dia -4", "Dia -3", "Dia -2", "Dia -1", "Dia 0"];
+        valores = [12, 15, 18, 20, 22, 25, 27];
+      }
+
+      return { labels, valores };
+    }
+
+    // -------------------------------------
+    // 2️⃣ PREVISÃO SIMPLES (SEM IA) – DO TEU SEGUNDO CÓDIGO
+    // -------------------------------------
+    function calcularPrevisaoSimples(ultimoValor, qtdDias) {
+      const previsoes = [];
+      for (let i = 1; i <= qtdDias; i++) {
+        // Regra bobinha só pra ter algo: soma 2 a cada dia
+        previsoes.push(ultimoValor + i * 2);
+      }
+      return previsoes;
+    }
+
+    // -------------------------------------
+    // 3️⃣ PREVISÃO COM IA (GEMINI) – DO TEU TERCEIRO CÓDIGO
+    // -------------------------------------
+    async function gerarPrevisoesIA(valoresPassados, qtdDias) {
+      if (!genAI) {
+        statusIaEl.textContent = "";
+        return null;
+      }
+
+      statusIaEl.textContent = "Gerando previsão com IA...";
+
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+      const prompt = `
+Você é uma IA especialista em análise de ocupação hospitalar.
+
+Valores de ocupação de leitos dos dias anteriores (em ordem cronológica):
+${valoresPassados.join(", ")}
+
+Gere previsões numéricas para os próximos ${qtdDias} dias.
+Responda EXATAMENTE neste formato (um por linha):
+
+Dia 1: número
+Dia 2: número
+Dia 3: número
+Dia 4: número
+Dia 5: número
+Dia 6: número
+Dia 7: número
+      `;
+
+      try {
+        const result = await model.generateContent(prompt);
+        const texto = result.response.text();
+        console.log("Resposta da IA:", texto);
+
+        const linhas = texto.split("\n").filter(l => l.includes(":"));
+
+        const valoresPrevisao = [];
+
+        linhas.forEach(linha => {
+          const partes = linha.split(":");
+          if (partes.length < 2) return;
+          const num = Number(String(partes[1]).trim().replace(",", "."));
+          if (!isNaN(num)) {
+            valoresPrevisao.push(num);
+          }
+        });
+
+        if (valoresPrevisao.length === 0) {
+          statusIaEl.textContent = "IA respondeu em formato inesperado. Usando só previsão simples.";
+          return null;
+        }
+
+        statusIaEl.textContent = "Previsão com IA gerada com sucesso.";
+        return valoresPrevisao;
+      } catch (err) {
+        console.error("Erro com IA:", err);
+        statusIaEl.textContent = "Erro ao chamar a IA. Usando só previsão simples.";
+        return null;
+      }
+    }
+
+    // -------------------------------------
+    // 4️⃣ INICIALIZA TUDO (JUNTA OS 3 CÓDIGOS)
+    // -------------------------------------
+    async function iniciar() {
+      const { labels, valores } = obterDadosHistoricos();
+      const qtdDiasPrevisao = 7;
+
+      // Previsão simples
+      const ultimo = valores[valores.length - 1];
+      const previsaoSimples = calcularPrevisaoSimples(ultimo, qtdDiasPrevisao);
+
+      // Labels dos dias futuros
+      const labelsFuturos = [];
+      for (let i = 1; i <= qtdDiasPrevisao; i++) {
+        labelsFuturos.push(`Dia +${i}`);
+      }
+
+      // Labels finais (histórico + previsão)
+      const labelsFinais = [...labels, ...labelsFuturos];
+
+      // Dados para o gráfico (todos com o MESMO tamanho do labelsFinais)
+      const dadosHistorico = [...valores, ...Array(qtdDiasPrevisao).fill(null)];
+      const dadosPrevSimples = [...Array(valores.length).fill(null), ...previsaoSimples];
+
+      // Previsão IA
+      const previsaoIA = await gerarPrevisoesIA(valores, qtdDiasPrevisao);
+      const dadosPrevIA = previsaoIA
+        ? [...Array(valores.length).fill(null), ...previsaoIA]
+        : null;
+
+      criarGrafico(labelsFinais, dadosHistorico, dadosPrevSimples, dadosPrevIA);
+    }
+
+    window.addEventListener("load", iniciar);
+  </script>
+</body>
+</html>

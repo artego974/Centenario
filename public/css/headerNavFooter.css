@@ -15,6 +15,14 @@ body {
     font-family: "Arial", sans-serif;
 }
 
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
 /* HEADER SUPERIOR */
 .top-header {
     width: 100%;
@@ -22,90 +30,82 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    
+    padding: 18px 50px;
+    border-bottom: 3px solid #278FAA;
 }
 
 .logo-area img {
-    height: auto;
-    width: 250px;
-    padding: 20px 0;
+    height: 70px;
+}
+
+/* SEÇÃO DIREITA */
+.right-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .ocupacao {
-    color: #278FAA;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.ocupacao button {
-    padding: 10px;
-    color: white;
-    background-color: #278FAA;
-    border: none;
-    border-radius: 0.5rem;
-
-    margin: 0;
-}
-
-.ocupacao h1 {
     text-align: center;
-    width: 100%;
-}
-
-.ocupacao p {
-    text-align: center;
-    margin-bottom: 5px;
     font-size: 14px;
-    padding-top: 6px;
-    height: auto;
+    color: #278FAA;
+    line-height: 1.2;
 }
 
-.fa-brands {
-    color:#278FAA;
-    font-size: 16px
-
+.ocupacao strong {
+    text-align: left;
+    color: #278FAA;
+    font-size: 22px;
 }
 
-.right-info {
+.ocupacao .leitos {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    background-color:#278FAA;
+    height: 6vh;
+    width: 14vw;
+    border-radius: 12px;
+    color: #f3f3f3;
+    font-weight: bold;
 }
 
-.social-icons {
+.ocupacao .leitos i {
+    margin-right: 6px;
+}
+
+/* ÍCONES SOCIAIS */
+.social-icons a {
+    font-size: 20px;
+    color: #278FAA;
+    margin-left: 12px;
+    transition: 0.2s;
     display: flex;
-    flex-direction: column;
-    padding: 0 6px;
-    margin-left: 7px;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2px;
+    text-decoration: none;
 }
 
-/* NAVBAR */
-
-
-.navbar li {
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
+.social-icons a:hover {
+    color: #1f6f88;
 }
 
 /* MENU */
-.navbar  {
+.main-menu {
     height: 10vh;
     width: 100%;
     background: #278FAA;
     padding: 10px 0;
 }
 
-.navbar ul {
+.main-menu ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
     padding-top: 14px;
 }
 
-.navbar a {
+.main-menu a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -114,7 +114,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.navbar a:hover {
+.main-menu a:hover {
     color: #d9eef7;
 }
 /* FOOTER */

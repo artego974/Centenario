@@ -29,8 +29,9 @@ body {
 }
 
 .bloco .imagem {
-    width: 50%;
-    height: 270px;
+    width: 40%;
+    height: 290px;
+
     border-radius: 7rem;
 }
 
@@ -53,8 +54,9 @@ body {
 }
 
 .bloco-2 .imagem {
-    width: 50%;
-    height: 270px;
+    width: 40%;
+
+    height: 290px;
     border-radius: 7rem;
 }
 
@@ -83,8 +85,10 @@ body {
 }
 
 .bloco-3 .imagem {
-    width: 50%;
-    height: 270px;
+    width: 40%;
+
+    height: 290px;
+
     border-radius: 7rem;
 }
 

@@ -342,6 +342,16 @@
     line-height: 1.3;
 }
 
+.brnPrevisao {
+    background-color: hsl(0, 0%, 100%);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    padding: 10px;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+
 /* HEADER DA OCUPAÇÃO DE LEITOS */
 .ocupacao-header {
     width: 90%;
@@ -711,4 +721,42 @@
         flex-direction: column;
         gap: 20px;
     }
+}
+
+
+.btn-previsoes {
+  padding: 12px 28px;
+  background-color: #0b88a5; /* azul do site */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
+  text-decoration: none;
+}
+
+/* HOVER */
+.btn-previsoes:hover {
+  background-color: #076f87;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.22);
+}
+
+/* CLICK */
+.btn-previsoes:active {
+  transform: scale(0.96);
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;  /* Aumente se quiser mais espaço */
+  margin-bottom: 25px;
+}
+
+.charts-container {
+  margin-bottom: 50px;
 }
