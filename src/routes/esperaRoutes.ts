@@ -4,7 +4,9 @@ import { PessoaEsperaController } from "../controllers/esperaController";
 const router = Router();
 const pessoaEsperaController = new PessoaEsperaController();
 
-router.put("/espera", pessoaEsperaController.update);
+
+router.put("/espera/:id", pessoaEsperaController.update);
+router.get("/espera", pessoaEsperaController.list);
 
 
 export default router;

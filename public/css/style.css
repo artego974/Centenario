@@ -1,0 +1,761 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* HEADER SUPERIOR */
+.top-header {
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    border-bottom: 3px solid #d30000;
+    
+}
+
+.logo-area img {
+    height: 70px;
+}
+
+/* SEÇÃO DIREITA */
+.right-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+}
+
+.ocupacao {
+    text-align: center;
+    font-size: 14px;
+    color: #d30000;
+    line-height: 1.2;
+}
+
+.ocupacao strong {
+    text-align: left;
+    color: #d30000;
+    font-size: 22px;
+}
+
+.ocupacao .leitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#d30000;
+    height: 6vh;
+    width: 14vw;
+    border-radius: 12px;
+    color: #f3f3f3;
+    font-weight: bold;
+}
+
+.ocupacao .leitos i {
+    margin-right: 6px;
+}
+
+/* ÍCONES SOCIAIS */
+.social-icons a {
+    font-size: 20px;
+    color: #d30000;
+    margin-left: 12px;
+    transition: 0.2s;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+}
+
+.social-icons a:hover {
+    color: #990000;
+}
+
+/* MENU VERMELHO */
+.main-menu {
+    height: 10vh;
+    width: 100%;
+    background: #d30000;
+    padding: 10px 0;
+}
+
+.main-menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding-top: 14px;
+}
+
+.main-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+}
+
+.main-menu a:hover {
+    color: #ffcccc;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .top-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .right-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-menu ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* ================== FAIXA VERMELHA ================== */
+.faixa-vermelha-triagem {
+    width: 100%;
+    height: 16vh;
+    background: #d30000;
+    
+}
+
+.titulo-faixa-vermelha {
+    display: flex;
+    color: white;
+    justify-content: center;
+    padding-top: 22px;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ================== CAIXA DO TÍTULO ================== */
+.triagem-titulo-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    width: fit-content;
+    height: 20vh;
+    padding: 25px 45px; 
+    margin: -40px auto 20px auto; 
+    border-radius: 25px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.triagem-titulo-box h1 {
+    color: #b10000;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.atualizacao-titulo {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 8px;
+    color: #b10000;
+    font: bold;
+}
+
+/* ================== TRIAGEM CONTEÚDO ================== */
+.triagem-conteudo {
+    text-align: center;
+    padding: 40px 0;    
+    background: #e9e9ef;
+}
+
+.label-triagem {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Números grandes */
+.vagas-gerais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.vagas-gerais div {
+    width: 60px;
+    height: 60px;
+    background: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* BOTÃO MANCHESTER */
+.btn-manchester {
+    background: #d30000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px 0 25px;
+}
+
+.btn-manchester i {
+    margin-left: 8px;
+}
+
+
+
+.cor {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+.cores-manchester {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    grid-template-columns: 1fr auto auto auto auto 1fr;
+    align-items: center;
+    margin: 20px 0;
+    gap: 2vw;
+}
+
+/* ------ BARRA AZUL (estica para esquerda) ------ */
+.azul {
+    width: 25vw;
+    display: flex;
+    justify-content: first baseline;
+    background: #3a7bd5;
+    
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ------ CORES DO MEIO ------ */
+.verde,
+.amarelo,
+.laranja {
+    border-radius: 8px;
+    font-weight: bold;
+    color: #fff;
+    width: 16vw;
+}
+
+.verde   { background: #3ebd52; }
+.amarelo { background: #ffb300; }
+.laranja { background: #ff8a00; }
+
+/* ------ BARRA VERMELHA (estica para direita) ------ */
+.vermelho {
+    width: 25vw;
+    display: flex;
+    justify-content: end;
+    background: #d30000;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* VALORES */
+.valores-manchester {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.valores-manchester div {
+    background: #d4d3d3;
+    width: 10vw;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* PRÓXIMA ATUALIZAÇÃO */
+.proxima-atualizacao {
+    font-size: 13px;
+    color: #b10000;
+    font-weight: bold;
+}
+
+
+.graficos-leitos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.grafico-box {
+    width: 180px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.grafico-box h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.grafico-box canvas {
+    width: 130px !important;
+    height: 130px !important;
+    margin: 0 auto;
+}
+
+.grafico-box p {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+/* HEADER DA OCUPAÇÃO DE LEITOS */
+.ocupacao-header {
+    width: 90%;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO DO LADO ESQUERDO */
+.logo-ocupacao {
+    height: 80px;
+    object-fit: contain;
+}
+
+/* TÍTULO CENTRAL */
+.ocupacao-titulo-centro {
+    text-align: center;
+}
+
+.ocupacao-titulo-centro h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #b10000;
+}
+
+.ocupacao-titulo-centro .atualizacao2 {
+    font-size: 15px;
+    color: #b10000;
+    margin-top: 4px;
+}
+
+/* LEGENDA DIREITA */
+.ocupacao-legenda {
+    text-align: left;
+    font-size: 14px;
+}
+
+.ocupacao-legenda p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+/* Quadradinhos legenda */
+.quadrado {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border: 1px solid #333;
+}
+
+.oc { background: #d36c6c; } /* ocupados */
+.dp { background: #e5e5e5; } /* disponíveis */
+
+
+
+
+
+/* ---------------------- CENTROS DE ATENDIMENTOS ---------------------- */
+
+.centros-especialidades {
+    background: #b00000;
+    padding: 70px 0;
+    color: #fff;
+}
+
+.centros-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: flex-start;
+}
+
+
+/* TEXTO ESQUERDO */
+.centros-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.titulo-bold {
+    font-size: 32px;
+    font-weight: 800; /* igual ao Figma */
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.titulo-normal {
+    font-size: 32px;
+    font-weight: 300; /* peso mais leve */
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.linha-branca {
+    width: 12vw;
+    height: 4px;
+    background: #fff;
+    margin-top: 12px;
+}
+
+
+/* GRID DOS BOTÕES */
+.centros-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 55%;
+}
+
+/* BOTÕES */
+.btn-centro {
+    width: 100%;
+    background: #ffffff;
+    color: #b00000;
+    border: none;
+    padding: 18px 25px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-centro i {
+    background: rgba(176,0,0,0.25);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.btn-centro:hover {
+    background: #ffe5e5;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+
+    .centros-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .centros-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .centros-texto h2,
+    .centros-texto h3 {
+        text-align: center;
+    }
+
+    .linha-branca {
+        margin: 12px auto 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ================== SEÇÃO DE VÍDEO (PLACEHOLDER) ================== */
+
+.video-apresentacao {
+    text-align: center;
+    padding: 60px 0;
+    background: #f5f5f5;
+}
+
+.video-titulo {
+    color: #b00000;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.video-subtitulo {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+/* QUADRADO CINZA */
+.video-placeholder {
+    width: 85%;
+    max-width: 1100px;
+    height: 480px;
+    background: #d9d9d9;
+    margin: 0 auto;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ÍCONE CENTRAL */
+.video-placeholder img {
+    width: 12vw;
+    height: auto;
+    opacity: 1;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .video-placeholder {
+        height: 260px;
+    }
+
+    .video-placeholder img {
+        width: 80px;
+    }
+}
+
+
+
+/* =================== ÚLTIMA SESSÃO (MAPA + CONTATO) =================== */
+
+.sessao-contato {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.contato-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* MAPA */
+.contato-mapa img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* CARD */
+.contato-card {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 530px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    border-bottom: 8px solid #d30000; /* barra vermelha inferior */
+}
+
+/* LINHAS */
+.linha-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.linha-info i {
+    font-size: 20px;
+    color: #d30000;
+    margin-top: 4px;
+}
+
+.linha-info p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.35;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 1000px) {
+    .contato-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contato-card {
+        max-width: 100%;
+    }
+
+    .contato-mapa img {
+        max-width: 100%;
+    }
+}
+
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    background: #f1f1f1;
+    padding: 50px 60px;
+    color: #444;
+    border-top: 3px solid black;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+/* Colunas */
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h3 {
+    color: #d30000;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.logo-footer img {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* Newsletter */
+.newsletter input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 40px 0;
+}
+
+/* Parte de baixo */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-links div h4 {
+    color: #d30000;
+    margin-bottom: 10px;
+}
+
+.footer-links div p {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.footer-info {
+    max-width: 300px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .footer-container,
+    .footer-bottom {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+

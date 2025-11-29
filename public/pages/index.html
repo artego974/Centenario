@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Centenário</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER SUPERIOR -->
+    <header class="top-header">
+        <div class="logo-area">
+            <img src="../img/logo_centenario.png" alt="Logo Hospital Centenário">
+        </div>
+
+        <div class="right-info">
+            <div class="ocupacao">
+                <strong>90%</strong> preenchidos <br>
+                <span class="leitos"><i class="fa-solid fa-bed"></i> Ocupação de leitos</span>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/hospitalcentenariosaoleo"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hospitalCentenarioSaoLeo/#"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU VERMELHO -->
+    <nav class="main-menu">
+        <ul>
+            <li><a href="#">Página Inicial</a></li>
+            <li><a href="#">Programa de Estágio</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Doe Vida</a></li>
+            <li><a href="#">Escalas</a></li>
+            <li><a href="#">Fundação</a></li>
+        </ul>
+    </nav>
+
+    <section class="banner">
+        <img src="../img/banner1.png" alt="banner-header">
+    </section>
+
+    <!-- ================== FAIXA VERMELHA ================== -->
+    <div class="faixa-vermelha-triagem">
+        <h3 class="titulo-faixa-vermelha">
+            OS PACIENTES MAIS GRAVES SERÃO ATENDIDOS PRIORITARIAMENTE
+        </h3>
+    </div>
+
+    <!-- ================== CAIXA DO TÍTULO ================== -->
+    <div class="triagem-titulo-box">
+        <h1>PROTOCOLO DE MANCHESTER</h1>
+        <p class="atualizacao-titulo">ÚLTIMA ATUALIZAÇÃO: 14:21:50</p>
+    </div>
+
+    <!-- ================== TRIAGEM - CONTEÚDO ================== -->
+    <section class="triagem-conteudo">
+
+        <h3 class="label-triagem">VAGAS GERAIS DISPONÍVEIS PARA ATENDIMENTO</h3>
+
+        <div class="vagas-gerais">
+            <div>1</div>
+            <div>2</div>
+            <div>8</div>
+            <div>4</div>
+        </div>
+
+        <h3 class="label-triagem">PRIORIDADE DE ATENDIMENTO</h3>
+
+        <button class="btn-manchester">
+            ESCALA DE MANCHESTER <i class="fa-solid fa-circle-info"></i>
+        </button>
+
+        <div class="cores-manchester">
+            <span class="cor vermelho">VERMELHO</span>
+            <span class="cor laranja">LARANJA</span>
+            <span class="cor amarelo">AMARELO</span>
+            <span class="cor verde">VERDE</span>
+            <span class="cor azul">AZUL</span>
+
+        </div>
+
+        <div class="valores-manchester">
+            <div id="valor-vermelho">111</div>
+            <div id="valor-laranja">111</div>
+            <div id="valor-amarelo">111</div>
+            <div id="valor-verde">111</div>
+            <div id="valor-azul">111</div>
+        </div>
+
+    </section>
+
+    <!-- ================== OCUPAÇÃO DE LEITOS ================== -->
+    <section class="ocupacao">
+
+        <section class="ocupacao">
+
+            <div class="ocupacao-header">
+
+                <!-- LOGO ESQUERDA -->
+                <img src="../img/logo_centenario.png" alt="Logo Hospital Centenário" class="logo-ocupacao">
+
+                <!-- TÍTULO CENTRAL -->
+                <div class="ocupacao-titulo-centro">
+                    <h2>Ocupação de Leitos</h2>
+                    <p class="atualizacao2">Última atualização: 28/11/2025 – 15:25</p>
+                </div>
+
+                <!-- LEGENDA DIREITA -->
+                <div class="ocupacao-legenda">
+                    <p><span class="quadrado oc"></span> Leitos ocupados</p>
+                    <p><span class="quadrado dp"></span> Leitos disponíveis</p>
+                </div>
+
+            </div>
+
+
+            <div class="graficos-leitos">
+
+        <div class="grafico-box">
+            <h4>Emergência - Adultos</h4>
+            <canvas id="graf1"></canvas>
+            <p id="info-graf1">Leitos: 40<br>Ocupados: 20</p>
+        </div>
+
+        <div class="grafico-box">
+            <h4>Emergência - Pediátrica</h4>
+            <canvas id="graf2"></canvas>
+            <p id="info-graf2">Leitos: 16<br>Ocupados: 16</p>
+        </div>
+
+        <div class="grafico-box">
+            <h4>Leitos Clínicos</h4>
+            <canvas id="graf3"></canvas>
+            <p id="info-graf3">Leitos: 119<br>Ocupados: 29</p>
+        </div>
+
+        <div class="grafico-box">
+            <h4>Leitos Pediátricos</h4>
+            <canvas id="graf4"></canvas>
+            <p id="info-graf4">Leitos: 17<br>Ocupados: 13</p>
+        </div>
+
+        <div class="grafico-box">
+            <h4>UTI Adulto</h4>
+            <canvas id="graf5"></canvas>
+            <p id="info-graf5">Leitos: 16<br>Ocupados: 4</p>
+        </div>
+
+        <div class="grafico-box">
+            <h4>UTI Neonatal</h4>
+            <canvas id="graf6"></canvas>
+            <p id="info-graf6">Leitos: 10<br>Ocupados: 2</p>
+        </div>
+
+</div>
+
+        </section>
+
+
+        <section class="centros-especialidades">
+
+            <div class="centros-container">
+
+                <div class="centros-texto">
+                    <h2 class="titulo-bold">CONHEÇA NOSSOS</h2>
+                    <h2 class="titulo-normal">CENTROS DE ATENDIMENTOS<br></h2>
+                    <h2 class="titulo-normal">ESPECIALIZADOS</h2>
+                    <div class="linha-branca"></div>
+                </div>
+
+                <div class="centros-grid">
+
+                    <button class="btn-centro">
+                        <span>CARDIOLOGIA</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="btn-centro">
+                        <span>TRAUMATOLOGIA</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="btn-centro">
+                        <span>ONCOLOGIA</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="btn-centro">
+                        <span>UROLOGIA</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="btn-centro">
+                        <span>NEUROLOGIA</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="btn-centro">
+                        <span>OBSTETRÍCIA</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="video-apresentacao">
+
+            <h2 class="video-titulo">VÍDEO DE APRESENTAÇÃO</h2>
+            <p class="video-subtitulo">
+                Conheça um pouco sobre o Hospital Centenário e como utilizar nosso site
+            </p>
+
+            <div class="video-placeholder">
+                <img src="../img/youtube-icon.png" alt="YouTube">
+            </div>
+
+        </section>
+
+        <section class="sessao-contato">
+
+    <div class="contato-container">
+
+            <!-- MAPA (imagem da pasta img) -->
+            <div class="contato-mapa">
+                <img src="../img/mapa-centenario.png" alt="Mapa Hospital Centenário">
+            </div>
+
+            <!-- CARD DE INFORMAÇÕES -->
+            <div class="contato-card">
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Agente Administrativo - Gestão de Recursos Humanos: Tanise Mello</p>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <p>Diretora de Recursos Humanos: Fernanda Batista de Fraga</p>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Av. Theodomiro Porto da Fonseca, 799 - Bairro Fiao, São Leopoldo - RS, 93020-645</p>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>Horário de Atendimento: Segunda à Quinta das 7h às 12h e das 13h30m às 16h42m<br>
+                    Sextas das 7h às 12h (somente trabalho interno)</p>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>Telefone: (51) 3591-1400 - Ramal 362</p>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Email: estagio@hospitalcentenario.rs.gov.br</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+
+                <!-- COLUNA 1 -->
+                <div class="footer-col logo-footer">
+                    <img src="../img/logo_centenario.png" alt="Logo">
+                    <p>Cuidando da sua saúde com responsabilidade, tecnologia e atendimento humanizado.</p>
+                </div>
+
+                <!-- COLUNA 2 -->
+                <div class="footer-col">
+                    <h3>ONDE NOS ENCONTRAR</h3>
+                    <p>Avenida Theodomiro Porto da Fonseca, 799 — Bairro Fião,<br>
+                        São Leopoldo, RS, CEP 93.020-645</p>
+                </div>
+
+                <!-- COLUNA 3 -->
+                <div class="footer-col">
+                    <h3>CONTATOS</h3>
+
+                    <p><i class="fa-solid fa-phone"></i> (51) 3591-1400</p>
+                    <p><i class="fa-solid fa-phone"></i> (51) 9 9999-9999</p>
+                    <p><i class="fa-solid fa-envelope"></i> contato@hospitalcentenario.rs.gov.br</p>
+                </div>
+
+                <!-- COLUNA 4 -->
+                <div class="footer-col newsletter">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <input type="text" placeholder="Nome">
+                    <input type="email" placeholder="E-mail">
+                </div>
+
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+
+                <div class="footer-links">
+                    <div>
+                        <h4>SERVIÇOS</h4>
+                        <p>Agendamento de Consultas</p>
+                        <p>Emergência 24h</p>
+                        <p>Exames e Diagnósticos</p>
+                        <p>Internações e Ocupação de Leitos</p>
+                        <p>Especialidades Médicas</p>
+                    </div>
+
+                    <div>
+                        <h4>ACESSO RÁPIDO</h4>
+                        <p>Portal do Paciente</p>
+                        <p>Resultado de Exames</p>
+                        <p>Informações sobre Leitos</p>
+                        <p>Trabalhe Conosco</p>
+                        <p>Ouvidoria</p>
+                    </div>
+
+                    <div>
+                        <h4>HORÁRIOS</h4>
+                        <p>Ambulatório: Seg a Sex – 7h às 18h</p>
+                        <p>Emergência: 24 horas</p>
+                    </div>
+
+                    <div>
+                        <h4>REDES SOCIAIS</h4>
+                        <p>Facebook</p>
+                        <p>Instagram</p>
+                        <p>YouTube</p>
+                    </div>
+                </div>
+
+                <div class="footer-info">
+                    <p>As informações deste site têm caráter informativo e não substituem a orientação médica.</p>
+                    <p>Em caso de emergência, procure atendimento imediato.</p>
+                    <br>
+                    <p>© 2025 Hospital Centenário. Todos os direitos reservados.</p>
+                </div>
+
+            </div>
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/api.js"></script>
+        <script>
+            async function carregarTriagem() {
+                const triagem = await getTriagem();
+                console.log("TRIAGEM CARREGADA:", triagem);
+            }
+
+            carregarTriagem();
+        </script>
+
+        <script>
+            carregarLeitos();
+        </script>
+</body>
+
+</html>
