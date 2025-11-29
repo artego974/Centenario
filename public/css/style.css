@@ -14,8 +14,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px 50px;
-    border-bottom: 3px solid #d30000;
-    
+    border-bottom: 3px solid #278FAA;
 }
 
 .logo-area img {
@@ -27,19 +26,18 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    
 }
 
 .ocupacao {
     text-align: center;
     font-size: 14px;
-    color: #d30000;
+    color: #278FAA;
     line-height: 1.2;
 }
 
 .ocupacao strong {
     text-align: left;
-    color: #d30000;
+    color: #278FAA;
     font-size: 22px;
 }
 
@@ -47,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#d30000;
+    background-color:#278FAA;
     height: 6vh;
     width: 14vw;
     border-radius: 12px;
@@ -62,7 +60,7 @@
 /* ÍCONES SOCIAIS */
 .social-icons a {
     font-size: 20px;
-    color: #d30000;
+    color: #278FAA;
     margin-left: 12px;
     transition: 0.2s;
     display: flex;
@@ -71,14 +69,14 @@
 }
 
 .social-icons a:hover {
-    color: #990000;
+    color: #1f6f88;
 }
 
-/* MENU VERMELHO */
+/* MENU */
 .main-menu {
     height: 10vh;
     width: 100%;
-    background: #d30000;
+    background: #278FAA;
     padding: 10px 0;
 }
 
@@ -96,11 +94,10 @@
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    
 }
 
 .main-menu a:hover {
-    color: #ffcccc;
+    color: #d9eef7;
 }
 
 .banner {
@@ -116,7 +113,6 @@
     object-fit: cover;
     display: block;
 }
-
 
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
@@ -137,12 +133,11 @@
     }
 }
 
-/* ================== FAIXA VERMELHA ================== */
+/* ================== FAIXA ================== */
 .faixa-vermelha-triagem {
     width: 100%;
     height: 16vh;
-    background: #d30000;
-    
+    background: #278FAA;
 }
 
 .titulo-faixa-vermelha {
@@ -164,15 +159,15 @@
     background: #ffffff;
     width: fit-content;
     height: 20vh;
-    padding: 25px 45px; 
-    margin: -40px auto 20px auto; 
+    padding: 25px 45px;
+    margin: -40px auto 20px auto;
     border-radius: 25px;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
     position: relative;
 }
 
 .triagem-titulo-box h1 {
-    color: #b10000;
+    color: #278FAA;
     font-size: 60px;
     text-align: center;
     letter-spacing: 1px;
@@ -182,8 +177,8 @@
     text-align: center;
     font-size: 16px;
     margin-top: 8px;
-    color: #b10000;
-    font: bold;
+    color: #278FAA;
+    font-weight: bold;
 }
 
 /* ================== TRIAGEM CONTEÚDO ================== */
@@ -223,7 +218,7 @@
 
 /* BOTÃO MANCHESTER */
 .btn-manchester {
-    background: #d30000;
+    background: #278FAA;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -237,8 +232,6 @@
 .btn-manchester i {
     margin-left: 8px;
 }
-
-
 
 .cor {
     padding: 10px 22px;
@@ -258,20 +251,17 @@
     gap: 2vw;
 }
 
-/* ------ BARRA AZUL (estica para esquerda) ------ */
 .azul {
     width: 25vw;
     display: flex;
     justify-content: first baseline;
     background: #3a7bd5;
-    
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     color: #fff;
     font-weight: bold;
 }
 
-/* ------ CORES DO MEIO ------ */
 .verde,
 .amarelo,
 .laranja {
@@ -285,18 +275,17 @@
 .amarelo { background: #ffb300; }
 .laranja { background: #ff8a00; }
 
-/* ------ BARRA VERMELHA (estica para direita) ------ */
+/* BARRA QUE ERA VERMELHA */
 .vermelho {
     width: 25vw;
     display: flex;
     justify-content: end;
-    background: #d30000;
+    background: #278FAA;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     color: #fff;
     font-weight: bold;
 }
-
 
 /* VALORES */
 .valores-manchester {
@@ -317,10 +306,9 @@
 /* PRÓXIMA ATUALIZAÇÃO */
 .proxima-atualizacao {
     font-size: 13px;
-    color: #b10000;
+    color: #278FAA;
     font-weight: bold;
 }
-
 
 .graficos-leitos {
     display: flex;
@@ -363,13 +351,11 @@
     justify-content: space-between;
 }
 
-/* LOGO DO LADO ESQUERDO */
 .logo-ocupacao {
     height: 80px;
     object-fit: contain;
 }
 
-/* TÍTULO CENTRAL */
 .ocupacao-titulo-centro {
     text-align: center;
 }
@@ -377,12 +363,12 @@
 .ocupacao-titulo-centro h2 {
     font-size: 32px;
     font-weight: bold;
-    color: #b10000;
+    color: #278FAA;
 }
 
 .ocupacao-titulo-centro .atualizacao2 {
     font-size: 15px;
-    color: #b10000;
+    color: #278FAA;
     margin-top: 4px;
 }
 
@@ -407,17 +393,13 @@
     border: 1px solid #333;
 }
 
-.oc { background: #d36c6c; } /* ocupados */
-.dp { background: #e5e5e5; } /* disponíveis */
-
-
-
-
+.oc { background: #78bcd1; }
+.dp { background: #e5e5e5; }
 
 /* ---------------------- CENTROS DE ATENDIMENTOS ---------------------- */
 
 .centros-especialidades {
-    background: #b00000;
+    background: #278FAA;
     padding: 70px 0;
     color: #fff;
 }
@@ -432,8 +414,6 @@
     align-items: flex-start;
 }
 
-
-/* TEXTO ESQUERDO */
 .centros-texto {
     display: flex;
     flex-direction: column;
@@ -443,14 +423,14 @@
 
 .titulo-bold {
     font-size: 32px;
-    font-weight: 800; /* igual ao Figma */
+    font-weight: 800;
     text-transform: uppercase;
     line-height: 1.1;
 }
 
 .titulo-normal {
     font-size: 32px;
-    font-weight: 300; /* peso mais leve */
+    font-weight: 300;
     text-transform: uppercase;
     line-height: 1.1;
 }
@@ -461,7 +441,6 @@
     background: #fff;
     margin-top: 12px;
 }
-
 
 /* GRID DOS BOTÕES */
 .centros-grid {
@@ -475,7 +454,7 @@
 .btn-centro {
     width: 100%;
     background: #ffffff;
-    color: #b00000;
+    color: #278FAA;
     border: none;
     padding: 18px 25px;
     border-radius: 12px;
@@ -489,18 +468,17 @@
 }
 
 .btn-centro i {
-    background: rgba(176,0,0,0.25);
+    background: rgba(39,143,170,0.25);
     padding: 10px;
     border-radius: 50%;
 }
 
 .btn-centro:hover {
-    background: #ffe5e5;
+    background: #d9eef7;
 }
 
 /* RESPONSIVO */
 @media (max-width: 900px) {
-
     .centros-container {
         flex-direction: column;
         text-align: center;
@@ -522,15 +500,7 @@
     }
 }
 
-
-
-
-
-
-
-
-
-/* ================== SEÇÃO DE VÍDEO (PLACEHOLDER) ================== */
+/* ================== SEÇÃO DE VÍDEO ================== */
 
 .video-apresentacao {
     text-align: center;
@@ -539,7 +509,7 @@
 }
 
 .video-titulo {
-    color: #b00000;
+    color: #278FAA;
     font-size: 28px;
     font-weight: 800;
     margin-bottom: 10px;
@@ -551,7 +521,6 @@
     margin-bottom: 35px;
 }
 
-/* QUADRADO CINZA */
 .video-placeholder {
     width: 85%;
     max-width: 1100px;
@@ -564,14 +533,12 @@
     align-items: center;
 }
 
-/* ÍCONE CENTRAL */
 .video-placeholder img {
     width: 12vw;
     height: auto;
     opacity: 1;
 }
 
-/* RESPONSIVO */
 @media (max-width: 900px) {
     .video-placeholder {
         height: 260px;
@@ -582,9 +549,7 @@
     }
 }
 
-
-
-/* =================== ÚLTIMA SESSÃO (MAPA + CONTATO) =================== */
+/* =================== ÚLTIMA SESSÃO =================== */
 
 .sessao-contato {
     padding: 80px 0;
@@ -601,7 +566,6 @@
     gap: 50px;
 }
 
-/* MAPA */
 .contato-mapa img {
     width: 100%;
     max-width: 600px;
@@ -609,7 +573,6 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
-/* CARD */
 .contato-card {
     background: #ffffff;
     padding: 35px 40px;
@@ -617,10 +580,9 @@
     width: 100%;
     max-width: 530px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    border-bottom: 8px solid #d30000; /* barra vermelha inferior */
+    border-bottom: 8px solid #278FAA;
 }
 
-/* LINHAS */
 .linha-info {
     display: flex;
     align-items: flex-start;
@@ -630,7 +592,7 @@
 
 .linha-info i {
     font-size: 20px;
-    color: #d30000;
+    color: #278FAA;
     margin-top: 4px;
 }
 
@@ -640,8 +602,6 @@
     line-height: 1.35;
 }
 
-
-/* RESPONSIVO */
 @media (max-width: 1000px) {
     .contato-container {
         flex-direction: column;
@@ -657,7 +617,6 @@
     }
 }
 
-
 /* FOOTER */
 .footer {
     width: 100%;
@@ -672,17 +631,15 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-
 }
 
-/* Colunas */
 .footer-col {
     flex: 1;
     min-width: 250px;
 }
 
 .footer-col h3 {
-    color: #d30000;
+    color: #278FAA;
     font-size: 18px;
     margin-bottom: 15px;
 }
@@ -698,7 +655,6 @@
     margin-bottom: 10px;
 }
 
-/* Newsletter */
 .newsletter input {
     width: 100%;
     padding: 10px;
@@ -714,7 +670,6 @@
     margin: 40px 0;
 }
 
-/* Parte de baixo */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -729,7 +684,7 @@
 }
 
 .footer-links div h4 {
-    color: #d30000;
+    color: #278FAA;
     margin-bottom: 10px;
 }
 
@@ -745,7 +700,6 @@
     line-height: 1.4;
 }
 
-/* RESPONSIVO */
 @media (max-width: 900px) {
     .footer-container,
     .footer-bottom {
@@ -758,4 +712,3 @@
         gap: 20px;
     }
 }
-

@@ -6,7 +6,7 @@ const centerTextPlugin = {
 
     ctx.save();
     ctx.font = 'bold 22px Arial';
-    ctx.fillStyle = '#c0392b';
+    ctx.fillStyle = '#278FAA';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
@@ -106,7 +106,7 @@ function criarGrafico(id, ocupados, total) {
       labels: ['Ocupados', 'Disponíveis'],
       datasets: [{
         data: [ocupados, disponiveis],
-        backgroundColor: ['#c0392b', '#dfe6e9'],
+        backgroundColor: ['#278FAA', '#dfe6e9'],
         borderWidth: 1,
         hoverOffset: 8
       }]
