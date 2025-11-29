@@ -53,22 +53,31 @@ setInterval(() => {
 
 async function carregarUltimaAtualizacaoTriagem() {
   try {
-    const response = await fetch("http://localhost:3000/espera/ultima");
-    const json = await response.json();
+    const res = await fetch("http://localhost:3000/espera/ultima/atualizacao");
+    const json = await res.json();
 
-    if (!json.ultimaAtualizacao) return;
+    console.log("RESPOSTA TRIAGEM:", json); // DEBUG
+
+    // Verifica corretamente o campo retornado
+    if (!json.ultimaAtualizacao) {
+      console.warn("Nenhuma última atualização encontrada.");
+      return;
+    }
 
     const data = new Date(json.ultimaAtualizacao);
 
-    const horaFormatada = data.toLocaleTimeString("pt-BR", {
+    const formatado = data.toLocaleString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit"
     });
 
-    document.getElementById("ultima-atualizacao-triagem").innerText = horaFormatada;
+    document.getElementById("ultima-atualizacao-manchester").innerText = formatado;
 
   } catch (err) {
-    console.error("Erro ao carregar última atualização da triagem:", err);
+    console.error("Erro ao carregar última atualização:", err);
   }
 }

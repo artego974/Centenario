@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const leitoController_1 = require("../controllers/leitoController");
+const router = (0, express_1.Router)();
+const leitoController = new leitoController_1.LeitoController();
+router.put("/:id/patologia", leitoController.atualizarPatologia);
+router.put("/:id/status", leitoController.atualizarStatus);
+router.get("/", (req, res) => leitoController.list(req, res));
+exports.default = router;

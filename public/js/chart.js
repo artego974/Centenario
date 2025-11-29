@@ -88,6 +88,7 @@ async function carregarLeitosGraficos() {
 
 carregarLeitosGraficos();
 carregarUltimaAtualizacao();
+
 // se quiser atualizar de X em X tempo:
 setInterval(() => {
   carregarLeitosGraficos();
@@ -159,5 +160,8 @@ async function carregarUltimaAtualizacao() {
     console.error("Erro ao carregar última atualização:", err);
   }
 }
+
+
+
 
 
